@@ -1,0 +1,8 @@
+.titulo-bemvindo{
+    color: var(--primary-color);
+}
+
+.botao{
+    color: var(--text-color) !important;
+    background-color: var(--primary-color) !important;
+}
