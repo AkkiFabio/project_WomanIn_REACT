@@ -1,0 +1,11 @@
+.login__img {
+    background-image: url(../../img/Social.svg);
+    background-repeat: no-repeat; 
+    width: 100vh; 
+    min-height: 100vh; 
+    background-size: cover;
+    background-position: -30px 150px;
+} 
+.login__text{
+    color: var(--primary-color);
+}
