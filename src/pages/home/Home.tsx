@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import { Box, Button, Grid, Typography} from '@material-ui/core';
+import { Box, Button, Grid, Typography} from '@mui/material';
 import ImagemBemVindo from '../home/Hiring.svg';
 import '../../root.css';
 
