@@ -1,0 +1,23 @@
+.cursor{
+    cursor: pointer;
+    color: white;
+}
+
+.container__navbar{
+    background-color: var(--primary-color) !important;
+
+
+}
+
+.navbar__item{ 
+    font-size: 20px;
+    color: var(--text-color) !important;
+
+
+}
+
+.navbar__item:hover {
+    transition: 0.3s ease;
+    transform: translateY(-2px)  ;
+
+}
