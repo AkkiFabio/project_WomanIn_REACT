@@ -22,3 +22,9 @@ li {
     background-color: var(--primary-color) !important;
     color: var(--text-color) !important;
 }
+
+.btn__secondary{
+    color: black !important;
+    font-size: 40px !important;
+    /* margin-right: 50px; */
+}

@@ -5,6 +5,7 @@ import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Footer from '../src/components/static/footer/Footer'
 import Navbar from '../src/components/static/navbar/Navbar'
+import UserForm from './pages/userForm/UserForm'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
         <Route path='/home' element={<Home />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/cadastro' element={<UserForm />} />
         </Routes>
         </div>
         <Footer />
@@ -25,3 +27,4 @@ function App() {
 }
 
 export default App;
+
