@@ -1,0 +1,34 @@
+.form__img {
+    background-image: url(../../img/Work.svg);
+    background-repeat: no-repeat; 
+    background-size: 70%;
+    background-position: center;
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.5;
+    z-index: -1 !important;
+} 
+
+.campos{
+    width: 500px;
+}
+
+.textfieldbg{
+    background-color: #e8d6f5;
+
+}
+
+.headliner{
+    color: var(--primary-color);
+    font-weight: bold !important;
+}
+
+.buttons{
+    display: flex !important;
+    /* align-content: space-between !important; */
+    /* justify-content: center !important; */
+    justify-content: space-between;
+}
