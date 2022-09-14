@@ -7,7 +7,12 @@ import Footer from '../src/components/static/footer/Footer'
 import Navbar from '../src/components/static/navbar/Navbar'
 import UserForm from './pages/userForm/UserForm'
 import CategoryList from './components/category/categoryList/categoryList';
-import PostList from './components/posts/postList/postList';
+import PostList from './components/posts/postList/PostList';
+import PostForm from './components/posts/postForm/postForm';
+import CategoryForm from './components/category/categoryForm/categoryForm';
+import DeleteCategory from './components/category/deleteCategory/deleteCategory';
+import DeletePost from './components/posts/deletePost/deletePost';
+import { LocalPostOfficeRounded } from '@mui/icons-material';
 
 function App() {
   return (
@@ -21,7 +26,13 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/cadastro' element={<UserForm />}/>
         <Route path='/categorias' element={<CategoryList />} />
-        <Route path='/posts' element={<PostList />} />
+        <Route path='/postagens' element={<PostList />} />
+        <Route path='/cadastroPost'element={< PostForm />} />
+        <Route path='/cadastroPost/:id' element={< PostForm />} />
+        <Route path='/cadastroCategoria' element={< CategoryForm />} />
+        <Route path='/cadastroTema/:id' element={< CategoryForm />} />
+        <Route path='/deletarPosts/:id' element={< DeletePost />} />
+        <Route path='/deletarCategoria/:id' element={< DeleteCategory />} />
         </Routes>
         </div>
         <Footer />

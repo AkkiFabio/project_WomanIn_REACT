@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
-import './deletePost.css';
-import { useNavigate, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-import Post from '../../../models/Post';
+import Category from '../../../models/Category';
+import { useNavigate, useParams } from 'react-router-dom';
+import './deleteCategory.css';
 import { searchId, deleteId } from '../../../services/Service';
 
-function deletePost() {
+function deleteCategory() {
 
     let history = useNavigate();
     const { id } = useParams<{id: string}>();
     const [token, setToken] = useLocalStorage("token");
-    const [post, setPost] = useState<Post>();
+    const [category, setCategory] = useState<Category>();
 
     useEffect(() => {
         if(token == '')
@@ -26,7 +26,7 @@ function deletePost() {
     }, [id])
 
     async function findById(id: string) {
-        searchId(`/postagens/${id}`, setPost, {
+        searchId(`/categorias/${id}`, setCategory, {
             headers: {
                 'Authorization': token
             }
@@ -34,17 +34,17 @@ function deletePost() {
     }
 
     function Sim() {
-        history('/postagens')
-        deleteId(`/postagens/${id}`, {
+        history('/categorias')
+        deleteId(`/categorias/${id}`, {
             headers: {
             'Authorization': token
             }
         });
-        alert('Postagem deletada com sucesso')
+        alert('Categoria deletada com sucesso')
     }
 
     function Nao(){
-        history('/postagens')
+        history('/categorias')
     }
 
     return (
@@ -54,11 +54,11 @@ function deletePost() {
                     <CardContent>
                         <Box justifyContent='center'>
                             <Typography color='textSecondary' gutterBottom>
-                                Deseja deletar a Postagem:
+                                Deseja deletar a Categoria:
                             </Typography>
 
                             <Typography color='textSecondary'>
-                                {post?.title}
+                                {category?.name}
                             </Typography>
                         </Box>
                     </CardContent>
@@ -85,4 +85,4 @@ function deletePost() {
     )
 }
 
-export default deletePost;
+export default deleteCategory;

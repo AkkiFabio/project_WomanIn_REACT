@@ -2,7 +2,7 @@ import { Container, Typography, TextField, FormControl, InputLabel, Select, Menu
 import React from 'react';
 import './postForm.css';
 
-function PostForm(){
+function postForm(){
 
     return(
         <Container maxWidth='sm' className='topo'>
@@ -11,12 +11,12 @@ function PostForm(){
                     Formulário de cadastro de postagem
                 </Typography>
 
-                <TextField value='' id='titulo' label='titulo' variant='outlined' name='titulo' margin='normal' fullWidth></TextField>
+                <TextField value='' id='title' label='title' variant='outlined' name='title' margin='normal' fullWidth></TextField>
 
-                <TextField value='' id='texto' label='texto' name='texto' variant='outlined' margin='normal' fullWidth></TextField>
+                <TextField value='' id='description' label='description' name='description' variant='outlined' margin='normal' fullWidth></TextField>
 
                 <FormControl>
-                    <InputLabel id='demo-simple-select-helper-label'>Tema</InputLabel>
+                    <InputLabel id='demo-simple-select-helper-label'>Categoria</InputLabel>
                     <Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper'>
                         <MenuItem value=''>Descrição da Postagem</MenuItem>
                     </Select>
@@ -32,3 +32,5 @@ function PostForm(){
         </Container>
     )
 }
+
+export default postForm;
