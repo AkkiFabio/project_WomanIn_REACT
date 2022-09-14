@@ -7,6 +7,7 @@ import Footer from '../src/components/static/footer/Footer'
 import Navbar from '../src/components/static/navbar/Navbar'
 import UserForm from './pages/userForm/UserForm'
 import CategoryList from './components/category/categoryList/categoryList';
+import PostList from './components/posts/postList/postList';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/cadastro' element={<UserForm />}/>
         <Route path='/categorias' element={<CategoryList />} />
+        <Route path='/posts' element={<PostList />} />
         </Routes>
         </div>
         <Footer />

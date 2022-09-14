@@ -1,0 +1,25 @@
+.text-decorator-none{
+    text-decoration: none;
+}
+
+/* COLOCAR NOSSAS CORES */
+
+.card{
+    border-color: #ff5475;
+}
+
+.atualizar{
+    margin: left;
+    background-color: #d6254d;
+    color: #fffee4;
+}
+
+.deletar{
+    margin: left;
+    background-color: #fffee4;
+    color: #d6254d;
+}
+
+.posts{
+    color: #ff9036;
+}
