@@ -6,7 +6,7 @@ import useLocalStorage from 'react-use-localstorage';
 import { search } from '../../../services/Service';
 import Post from '../../../models/Post';
 
-function PostList() {
+function postList() {
 
     const [posts, setPosts] = useState<Post[]>([])
     const [token, setToken] = useLocalStorage('token');
@@ -81,4 +81,4 @@ function PostList() {
     )
 }
 
-export default PostList;
+export default postList;

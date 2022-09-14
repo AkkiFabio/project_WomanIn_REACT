@@ -8,18 +8,18 @@ import './categoryList.css';
 import '../../../root.css';
 
 function CategoryList() {
-  const [categories, setTemas ] = useState<Category[]>([])
-  const [ token, setToken ] = useLocalStorage('token');
+  const [categories, setTemas] = useState<Category[]>([])
+  const [token, setToken] = useLocalStorage('token');
   let navigate = useNavigate();
 
   useEffect(() => {
-    if(token == ''){
+    if (token == '') {
       alert("Você precisa estar logado.")
       navigate("/login")
     }
   }, [token])
 
-  async function getTema(){
+  async function getTema() {
     await search('/tema', setTemas, {
       headers: {
         'Authorization': token
@@ -33,39 +33,39 @@ function CategoryList() {
 
   return (
     <>
-    {
-      categories.map(category => (
-      <Box m={2} >
-        <Card variant="outlined">
-          <CardContent>
-            <Typography color="textSecondary" gutterBottom>
-              Categorias
-            </Typography>
-            <Typography variant="h5" component="h2">
-              {category.name}
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Box display="flex" justifyContent="center" mb={1.5} >
+      {
+        categories.map(category => (
+          <Box m={2} >
+            <Card variant="outlined">
+              <CardContent>
+                <Typography color="textSecondary" gutterBottom>
+                  Categorias
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {category.name}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Box display="flex" justifyContent="center" mb={1.5} >
 
-              <Link to={`formularioTema/${category.id}`} className="no__text__decorator">
-                <Box mx={1}>
-                  <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                    Atualizar
-                  </Button>
+                  <Link to={`formularioTema/${category.id}`} className="no__text__decorator">
+                    <Box mx={1}>
+                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                        Atualizar
+                      </Button>
+                    </Box>
+                  </Link>
+                  <Link to={`/deletarTema/${category.id}`} className="no__text__decorator">
+                    <Box mx={1}>
+                      <Button variant="contained" size='small' color="secondary">
+                        Deletar
+                      </Button>
+                    </Box>
+                  </Link>
                 </Box>
-              </Link>
-              <Link to={`/deletarTema/${category.id}`} className="no__text__decorator">
-                <Box mx={1}>
-                  <Button variant="contained" size='small' color="secondary">
-                    Deletar
-                  </Button>
-                </Box>
-              </Link>
-            </Box>
-          </CardActions>
-        </Card>
-      </Box>
+              </CardActions>
+            </Card>
+          </Box>
         ))
       }
     </>
