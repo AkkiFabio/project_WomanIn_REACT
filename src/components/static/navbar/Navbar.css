@@ -6,14 +6,14 @@
 .container__navbar{
     background-color: var(--primary-color) !important;
 
+    padding-inline: 16rem;
+
 
 }
 
 .navbar__item{ 
     font-size: 20px;
     color: var(--text-color) !important;
-
-
 }
 
 .navbar__item:hover {
@@ -21,3 +21,5 @@
     transform: translateY(-2px)  ;
 
 }
+
+

@@ -5,9 +5,12 @@
 :root{
     --hue: 275; 
     --primary-color: hsl(var(--hue), 100%, 45%);
+    --primary-color-dark: hsl(var(--hue), 100%, 13%);
     --secondary-color: hsl(var(--hue), 90%, 30%);
+    --secondary-color-lg: hsl(var(--hue) , 70%, 60%);
     --text-color: hsl(var(--hue), 60%, 95%);
     --text-color-dark: hsl(var(--hue), 60%, 5%);
+    --hover: #B19FF9;
 }
 
 li {

@@ -4,6 +4,8 @@ import { AppBar, Box, Toolbar, Typography, /*Button, IconButton*/} from "@mui/ma
 import { Link } from "react-router-dom";
 import './Navbar.css';
 import '../../../root.css';
+import Logo from '../../../img/logo.svg'
+import HomeIcon from '@mui/icons-material/Home';
 
 function Navbar() {
     return (
@@ -21,7 +23,7 @@ function Navbar() {
                             <MenuIcon />
                         </IconButton> */}
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            LOGO AQUI
+                            LOGO
                         </Typography>
                         
                         <Box display="flex" justifyContent="start" />
