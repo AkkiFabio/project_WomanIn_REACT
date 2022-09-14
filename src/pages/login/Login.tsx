@@ -1,10 +1,10 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Grid, Box, Typography, TextField, Button } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
-// import useLocalStorage from 'react-use-localstorage';
-// import { login } from '../../services/Service';
+import useLocalStorage from 'react-use-localstorage';
+import { login } from '../../services/Service';
 // // import { useDispatch } from 'react-redux'
-// import UserLogin from '../../models/UserLogin';
+import UserLogin from '../../models/UserLogin';
 import './Login.css'; 
 
 function Login(){
@@ -13,10 +13,8 @@ function Login(){
     const [token, setToken] = useLocalStorage('token');
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
-            id: 0,
-            usuario: '',
-            senha: '',
-            token: ''
+            email: '',
+            password: ''
         }
         )
 
@@ -56,13 +54,13 @@ function Login(){
         <Grid alignItems='center'xs={6} >
             <Box paddingX={20}>
                 <form action="" onSubmit={onSubmit}> 
-                    <Typography variant='h3'gutterBottom component='h3'align='center'>
+                    <Typography variant='h3'gutterBottom component='h3'align='center' className="headliner">
                         Entrar 
                     </Typography>
                     <TextField value={userLogin.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e) }
 id='email' label='E-mail'variant='outlined' name='email'margin='normal' fullWidth></TextField>
-                    <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e) }
- id='password' label='Senha' variant='outlined' name='password' margin='normal'fullWidth></TextField>
+                    <TextField value={userLogin.password} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e) }
+ id='password' label='Senha' variant='outlined' name='password' margin='normal' type='password' fullWidth></TextField>
                     <Box marginTop={2} textAlign='center'>
 
                         <Button type='submit'variant='contained' className='btn__primary'>
