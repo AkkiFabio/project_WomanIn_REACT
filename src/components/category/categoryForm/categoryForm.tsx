@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import { Container, Typography, Button } from '@material-ui/core';
-import { TextField } from '@material-ui/core';
+import { Container, Typography, Button } from '@mui/material';
+import { TextField } from '@mui/material';
 import './categoryForm.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
@@ -10,7 +10,7 @@ import { searchId, post, put } from '../../../services/Service';
 import { backdropClasses } from '@mui/material';
 import { FunctionsTwoTone } from '@mui/icons-material';
 
-function categoryForm() {
+function CategoryForm() {
 
     let history = useNavigate();
     const { id } = useParams<{id: string}>();
@@ -33,7 +33,7 @@ function categoryForm() {
     }, [id])
 
     async function findById(id: string) {
-        searchId(`/categorias/${id}`, setCategory, {
+        searchId(`api/Category/${id}`, setCategory, {
             headers: {
                 'Authorization': token
             }
@@ -92,4 +92,4 @@ function categoryForm() {
     )
 }
 
-export default categoryForm;
+export default CategoryForm;

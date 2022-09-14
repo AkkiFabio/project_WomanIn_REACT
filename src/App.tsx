@@ -27,12 +27,11 @@ function App() {
         <Route path='/cadastro' element={<UserForm />}/>
         <Route path='/categorias' element={<CategoryList />} />
         <Route path='/postagens' element={<PostList />} />
-        <Route path='/cadastroPost'element={< PostForm />} />
-        <Route path='/cadastroPost/:id' element={< PostForm />} />
-        <Route path='/cadastroCategoria' element={< CategoryForm />} />
-        <Route path='/cadastroTema/:id' element={< CategoryForm />} />
-        <Route path='/deletarPosts/:id' element={< DeletePost />} />
-        <Route path='/deletarCategoria/:id' element={< DeleteCategory />} />
+        <Route path='/cadastroPost'element={<PostForm />} />
+        <Route path='/cadastroPost/:id' element={<PostForm />} />
+        <Route path='/cadastroCategoria' element={<CategoryForm />} />
+        <Route path='/deletarPost/:id' element={<DeletePost />} />
+        <Route path='/deletarCategoria/:id' element={<DeleteCategory />} />
         </Routes>
         </div>
         <Footer />

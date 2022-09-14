@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
+import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
 import useLocalStorage from 'react-use-localstorage';
 import Category from '../../../models/Category';
 import { useNavigate, useParams } from 'react-router-dom';
 import './deleteCategory.css';
 import { searchId, deleteId } from '../../../services/Service';
 
-function deleteCategory() {
+function DeleteCategory() {
 
     let history = useNavigate();
     const { id } = useParams<{id: string}>();
@@ -26,7 +26,7 @@ function deleteCategory() {
     }, [id])
 
     async function findById(id: string) {
-        searchId(`/categorias/${id}`, setCategory, {
+        searchId(`api/Category/${id}`, setCategory, {
             headers: {
                 'Authorization': token
             }
@@ -85,4 +85,4 @@ function deleteCategory() {
     )
 }
 
-export default deleteCategory;
+export default DeleteCategory;

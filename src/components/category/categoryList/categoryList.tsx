@@ -20,7 +20,7 @@ function CategoryList() {
   }, [token])
 
   async function getTema() {
-    await search('/tema', setTemas, {
+    await search('api/Category', setTemas, {
       headers: {
         'Authorization': token
       }

@@ -2,7 +2,7 @@ import { Container, Typography, TextField, FormControl, InputLabel, Select, Menu
 import React from 'react';
 import './postForm.css';
 
-function postForm(){
+function PostForm(){
 
     return(
         <Container maxWidth='sm' className='topo'>
@@ -33,4 +33,4 @@ function postForm(){
     )
 }
 
-export default postForm;
+export default PostForm;

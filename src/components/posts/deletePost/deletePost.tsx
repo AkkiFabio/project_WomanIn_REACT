@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
+import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material';
 import './deletePost.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import Post from '../../../models/Post';
 import { searchId, deleteId } from '../../../services/Service';
 
-function deletePost() {
+function DeletePost() {
 
     let history = useNavigate();
     const { id } = useParams<{id: string}>();
@@ -14,9 +14,10 @@ function deletePost() {
     const [post, setPost] = useState<Post>();
 
     useEffect(() => {
-        if(token == '')
-        alert("Você precisa estar logado")
-        history("/login")
+        if(token == ''){
+            alert("Você precisa estar logado")
+            history("/login")
+        }        
     }, [token])
 
     useEffect(() => {
@@ -26,7 +27,7 @@ function deletePost() {
     }, [id])
 
     async function findById(id: string) {
-        searchId(`/postagens/${id}`, setPost, {
+        searchId(`api/Post/id/${id}`, setPost, {
             headers: {
                 'Authorization': token
             }
@@ -35,7 +36,7 @@ function deletePost() {
 
     function Sim() {
         history('/postagens')
-        deleteId(`/postagens/${id}`, {
+        deleteId(`api/Post/delete/${id}`, {
             headers: {
             'Authorization': token
             }
@@ -85,4 +86,4 @@ function deletePost() {
     )
 }
 
-export default deletePost;
+export default DeletePost;
