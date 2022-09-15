@@ -5,10 +5,7 @@
 
 .container__navbar{
     background-color: var(--primary-color) !important;
-
     padding-inline: 16rem;
-
-
 }
 
 .navbar__item{ 
@@ -21,5 +18,8 @@
     transform: translateY(-2px)  ;
 
 }
-
+.logoNavbar {
+    width: 150px;
+    height: 50px;
+}
 
