@@ -2,11 +2,14 @@ import React from 'react';
 import './Home.css';
 import { Box, Button, Grid, Typography} from '@mui/material';
 import { Link } from 'react-router-dom'
-import ImagemBemVindo from '../home/Hiring.png';
+import ImagemBemVindo from '../home/Hiring.svg';
 import '../../root.css';
 import HomeBlob from '../../img/blob/home.svg'
-import HomeImg from '../../img//home_img.svg'
+import HomeImg from '../../img/home_img.svg'
 import Typed from "react-typed";
+import CursosImg from '../../img/Cursos.svg'
+import ConexoesImg from '../../img/Conexoes.svg'
+
 
 
 function Home() {
@@ -45,6 +48,63 @@ function Home() {
                     
                 </Grid>
 
+            </Grid>
+            
+            <Grid container alignItems='center' className='section bgvagas' >
+                <Grid item xs={6}>
+                    <img src={ImagemBemVindo} alt='' width='500px' height='500px' />
+                </Grid>
+                <Grid alignItems='center' item xs={6}>
+                    <Box paddingX={20}>
+                        <Typography variant='h3' gutterBottom component='h3' align='center' className='titulo-bemvindo'>Vagas</Typography>
+                        <Typography variant='h5' gutterBottom component='h5' align='center' className='subitulo-bemvindo'> <img src="" alt="" /> Comece uma nova carreira </Typography>
+                    </Box>
+
+                    <Box display='flex' justifyContent='center'>
+                        <Box marginRight={1}>
+                            <Button variant='outlined' className='botao'> oportunidades </Button>
+                        </Box>
+                    </Box>
+                    {/* <Box display='flex' justifyContent='center'>
+                        <Box marginRight={1}>
+                            <Button variant='outlined' className='botao'> D </Button>
+                        </Box>
+                    </Box> */}
+                </Grid>
+            </Grid>
+            <Grid container alignItems='center' className='section bgCursos'>
+                <Grid alignItems='center' item xs={6}>
+                    <Box paddingX={20}>
+                        <Typography variant='h3' gutterBottom component='h3' align='center' className='titulo-bemvindo'>Cursos</Typography>
+                        <Typography variant='h5' gutterBottom component='h5' align='center' className='subitulo-bemvindo'> <img src="" alt="" /> Aprenda novas habilidades </Typography>
+                    </Box>
+
+                    <Box display='flex' justifyContent='center'>
+                        <Box marginRight={1}>
+                            <Button variant='outlined' className='botao'> Estude Conosco </Button>
+                        </Box>
+                    </Box>
+                </Grid>
+                <Grid item xs={6}>
+                    <img src={CursosImg} alt='' width='500px' height='500px' />
+                </Grid>
+            </Grid>
+            <Grid container alignItems='center' className='section bgConexoes'>
+                <Grid item xs={6}>
+                    <img src={ConexoesImg} alt='' width='500px' height='500px' />
+                </Grid>
+                <Grid alignItems='center' item xs={6}>
+                    <Box paddingX={20}>
+                        <Typography variant='h3' gutterBottom component='h3' align='center' className='titulo-bemvindo'>Conexões</Typography>
+                        <Typography variant='h5' gutterBottom component='h5' align='center' className='subitulo-bemvindo'> <img src="" alt="" /> Conecte-se às oportunidades </Typography>
+                    </Box>
+
+                    <Box display='flex' justifyContent='center'>
+                        <Box marginRight={1}>
+                            <Button variant='outlined' className='botao'> Ver Postagens </Button>
+                        </Box>
+                    </Box>
+                </Grid>
             </Grid>
         </>
     )
