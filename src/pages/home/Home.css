@@ -1,8 +1,53 @@
-.titulo-bemvindo{
-    color: var(--primary-color);
+.section{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    min-height: 400px;
+    padding: 70px 15vw;
 }
 
-.botao{
-    color: var(--text-color) !important;
-    background-color: var(--primary-color) !important;
+.home__blob{
+    width: 600px;
 }
+
+.home__img{
+    position: absolute;
+    top: 180px;
+    right: 200px;
+}
+
+.header{
+    font-weight: bold;
+    font-size: 70px !important;
+}
+
+.subtitle__home {
+    font-size: 40px !important;
+}
+
+/* typed color */
+span{
+    color: var(--primary-color);
+    font-weight: bold !important;
+}
+
+.btn__home{
+    margin-top: 20px !important;
+
+    font-size: 20px !important;
+    color: var(--primary-color) !important;
+    font-weight: bold !important;
+
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 5px;
+
+    padding-inline: 100px !important;
+}
+
+.btn__home:hover{
+    background-color: var(--hover) !important;
+    color: #fafafa !important;
+    border: 1px solid var(--hover) !important;
+}
+
