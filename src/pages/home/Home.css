@@ -51,3 +51,14 @@ span{
     border: 1px solid var(--hover) !important;
 }
 
+.bgvagas{
+    background-color: #F5E8FF;
+}
+
+.bgCursos{
+    background-color: #E9DAF4;
+}
+
+.bgConexoes{
+    background-color: #F4EFFF;
+}
