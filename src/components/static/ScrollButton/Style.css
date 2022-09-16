@@ -1,0 +1,15 @@
+.icon {
+    position: fixed; 
+    width: 100%;
+    left: 95%;
+    bottom: 30px;
+    font-size: 4rem;
+    z-index: 1;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.icon:hover{
+    transform: translateY(-10px);
+    transition: .3s ease-out;
+}

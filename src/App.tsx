@@ -14,6 +14,7 @@ import DeleteCategory from './components/category/deleteCategory/deleteCategory'
 import DeletePost from './components/posts/deletePost/deletePost';
 import { LocalPostOfficeRounded } from '@mui/icons-material';
 import AboutUs from './pages/aboutUs/AboutUs';
+import ScrollButton from './components/static/ScrollButton/ScrollButton';
 function App() {
   return (
     <>
@@ -35,6 +36,7 @@ function App() {
         <Route path='/deletarCategoria/:id' element={<DeleteCategory />} />
         </Routes>
         </div>
+        <ScrollButton />
         <Footer />
       </Router>
     </>
