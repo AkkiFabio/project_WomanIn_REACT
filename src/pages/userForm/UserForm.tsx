@@ -148,7 +148,7 @@ function UserForm() {
         {
             id: 0,
             name: "",
-            cpf: "",
+            cpF_CNPJ: "",
             email: "",
             password: "",
         }
@@ -158,7 +158,7 @@ function UserForm() {
         {
             id: 0,
             name: "",
-            cpf: "",
+            cpF_CNPJ: "",
             email: "",
             password: "",
         }
@@ -190,7 +190,7 @@ function UserForm() {
         
         if(confirmarSenha === user.password){
             try {
-                await cadastroUsuario(`/api/Usuarios/cadastrar`, user, setUserResult)
+                await cadastroUsuario(`/api/User/register`, user, setUserResult)
                 alert('Usuario cadastrado com sucesso')
             } catch (error) {
                 alert('Dados já existentes no sistema, altere os campos e tente novamente!')
@@ -217,7 +217,7 @@ function UserForm() {
                         </Typography>
                         <Box display="flex" flexDirection='column'>
                             <TextField value={user.name} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='name' label='Nome' variant='outlined' name='name' margin='normal' className="textfieldbg"></TextField>
-                            <TextField value={user.cpf} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='cpf' label='CPF' variant='outlined' name='cpf' margin='normal' className="textfieldbg"></TextField> 
+                            <TextField value={user.cpF_CNPJ} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='cpF_CNPJ' label='CPF' variant='outlined' name='cpF_CNPJ' margin='normal' className="textfieldbg"></TextField> 
                             <TextField value={user.email} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='email' label='E-mail'variant='outlined' name='email'margin='normal' className="textfieldbg"></TextField>
                             <TextField value={user.password} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='password' label='Senha' variant='outlined' name='password' margin='normal' className="textfieldbg" type='password'></TextField>
                             <TextField value={confirmarSenha} onChange={(e:ChangeEvent<HTMLInputElement>)=> confirmarSenhaHandle(e)} id='confirmPassword' label='Confirmar Senha' variant='outlined' name='confirmPassword' margin='normal' className="textfieldbg" type='password'></TextField>
