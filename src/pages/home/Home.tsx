@@ -24,7 +24,7 @@ function Home() {
                         <Typography variant='h5' gutterBottom component='h5' className='subtitle__home'>A rede social <Typed className='subtitle__home'
       strings={[
             "das mulheres",
-            "do emponderamento",
+            "do empoderamento",
             "delas.",
           ]}
           typeSpeed={50}
