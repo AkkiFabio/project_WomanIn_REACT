@@ -4,7 +4,7 @@ import { Box, Card, CardActions, Button, Typography, CardContent } from '@mui/ma
 import './postList.css';
 import useLocalStorage from 'react-use-localstorage';
 import { post, search } from '../../../services/Service';
-import Post from '../../../models/Post';
+import Post from '../../../models/PostModel';
 
 function PostList() {
 
