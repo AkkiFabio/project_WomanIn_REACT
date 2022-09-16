@@ -21,7 +21,6 @@ No Brasil, a participação das mulheres é 20% inferior a dos homens no mercado
 
                     <Box paddingX={20}>
                         <Typography variant='h3' gutterBottom component='h3' align='center' className='titulo-bemvindo'> Diante desses dados, pensando nos OBJETIVOS DE DESENVOLVIMENTO SUSTENTÁVEL propostos pela ONU para a Agenda 2030, escolhemos o ODS nº 5: Igualdade de Gênero. </Typography>
-                        <Typography variant='h5' gutterBottom component='h5' align='center' className='subtitulo-bemvindo'> Equipe Woman In </Typography>
                     </Box>
                     <Box display='flex' justifyContent='center'>
                         <Box marginRight={1}>
@@ -38,7 +37,6 @@ No Brasil, a participação das mulheres é 20% inferior a dos homens no mercado
                     <img src={ImagemBemVindo} alt='' width='500px' height='500px'/>
                 </Grid>
                 <Grid alignItems='center' item xs={6}>
-
                     <Box paddingX={20}>
                         <Typography variant='h3' gutterBottom component='h3' align='center' className='titulo-bemvindo'> Assim, a WomanIn busca impulsionar a carreira de mulheres, ofertando vagas exclusivas de empresas que apoiam a mesma causa e reconhecem a importância de empregá-las e dar a elas autonomia profissional e financeira. </Typography>
                     </Box>
