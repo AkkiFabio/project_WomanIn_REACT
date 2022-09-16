@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,700;1,400&display=swap');
 
 *{
     box-sizing: border-box;
@@ -19,6 +19,16 @@ body{
     --text-color-dark: hsl(var(--hue), 60%, 5%);
     --hover: #B19FF9;
 }
+
+.section{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    min-height: 400px;
+    padding: 70px 15vw;
+}
+
 
 li {
     list-style: none;

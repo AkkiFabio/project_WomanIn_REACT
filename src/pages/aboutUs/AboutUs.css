@@ -3,6 +3,10 @@
     font-size: 25px !important;
 }
 
+.first {
+    margin-top: 50px;
+}
+
 .botao{
     color: var(--text-color) !important;
     background-color: var(--primary-color) !important;

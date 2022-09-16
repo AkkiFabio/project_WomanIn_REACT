@@ -88,15 +88,17 @@
 }
 
 .womanin{
-    font-weight: bold;
     color: var(--primary-color);
     font-size: 40px !important; 
+    font-family: 'Cardo', serif !important;
+    letter-spacing: -9px !important;
 }
 
 .womanin__active{
-    font-weight: bold;
     color: #fafafa;
     font-size: 40px !important; 
+    font-family: 'Cardo', serif !important;
+    letter-spacing: -9px !important;
 }
 
 .logoNavbar {

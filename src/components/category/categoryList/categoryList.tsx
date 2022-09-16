@@ -36,7 +36,7 @@ function CategoryList() {
       {
         categories.map(category => (
           <Box m={2} >
-            <Card variant="outlined">
+            <Card variant="outlined" className='card'>
               <CardContent>
                 <Typography color="textSecondary" gutterBottom>
                   Categorias

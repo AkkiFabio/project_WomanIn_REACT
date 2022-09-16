@@ -1,12 +1,3 @@
-.section{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-
-    min-height: 400px;
-    padding: 70px 15vw;
-}
-
 .home__blob{
     width: 600px;
 }

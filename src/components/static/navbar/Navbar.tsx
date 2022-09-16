@@ -57,7 +57,7 @@ function Navbar() {
                             </Box>
                             
                             <Box className='cursor'>
-                            <Link to='/vagas' className='no__text__decorator'>
+                            <Link to='/postagens' className='no__text__decorator'>
                                 <Typography variant="h6" component="div" className={navbar ? "nav__item__active" : "nav__item"}>
                                     Vagas
                                 </Typography>

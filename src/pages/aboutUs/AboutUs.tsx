@@ -8,15 +8,15 @@ function AboutUs() {
     return (
         <>
             
-            <Grid container direction='row' justifyContent='center' alignItems='center' className='caixa-inicio'>
+            <Grid container direction='row' justifyContent='center' alignItems='center' className='section first'>
                 <Box paddingX={20}>
-                        <Typography variant='h3' gutterBottom component='h3' align='center' className='titulo-bemvindo'> Quem Somos </Typography>
+                        <Typography variant='h3' gutterBottom component='h3' align='center' className='titulo-bemvindo'> Sobre nós </Typography>
                         <Typography variant='h5' gutterBottom component='h5' align='center' className='subitulo-bemvindo'> A WomanIn é uma iniciativa com objetivo de reduzir a desigualdade de gênero.
 No Brasil, a participação das mulheres é 20% inferior a dos homens no mercado de trabalho. Quando falamos sobre área tech, as mulheres ocupam somente 7,5% das vagas ofertadas em nosso país. </Typography>
                 </Box>
 
             </Grid>
-            <Grid container direction='row' justifyContent='center' alignItems='center' className='caixa-inicio'>
+            <Grid container direction='row' justifyContent='center' alignItems='center' className='section'>
                 <Grid alignItems='center' item xs={6}>
 
                     <Box paddingX={20}>
@@ -32,7 +32,7 @@ No Brasil, a participação das mulheres é 20% inferior a dos homens no mercado
                     <img src={ImagemBemVindo} alt='' width='500px' height='500px'/>
                 </Grid>
             </Grid>
-            <Grid container direction='row' justifyContent='center' alignItems='center' className='caixa-inicio'>
+            <Grid container direction='row' justifyContent='center' alignItems='center' className='section'>
                 <Grid item xs={6}>
                     <img src={ImagemBemVindo} alt='' width='500px' height='500px'/>
                 </Grid>
