@@ -19,15 +19,12 @@ function Navbar() {
                             color="inherit"
                             aria-label="menu"
                             sx={{ mr: 2 }}
-                        >
                             <MenuIcon />
                         </IconButton> */}
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                             LOGO
                         </Typography>
-                        
                         <Box display="flex" justifyContent="start" />
-
                         <Link to="/home" className="no__text__decorator">
                             <Box mx={1} className='cursor'>
                                 <Typography className='navbar__item' variant="h6" color="white">
@@ -35,7 +32,6 @@ function Navbar() {
                                 </Typography>
                             </Box>
                         </Link>
-
                         <Link to="/Quem-Somos" className="no__text__decorator">
                             <Box mx={1} className='cursor'>
                                 <Typography className='navbar__item' variant="h6" color="white">
