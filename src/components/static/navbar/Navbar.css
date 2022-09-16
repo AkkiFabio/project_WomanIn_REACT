@@ -1,22 +1,52 @@
-.cursor{
-    cursor: pointer;
-    color: white;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .container__navbar{
     background-color: var(--primary-color) !important;
     padding-inline: 16rem;
+    background-color: #fafafa !important;
+    padding-inline: 16rem;
+    padding-block: 1rem;
+
+    color: var(--text-color-dark) !important;
 }
 
-.navbar__item{ 
-    font-size: 20px;
-    color: var(--text-color) !important;
+.cursor{
+    cursor: pointer;
 }
 
-.navbar__item:hover {
+.nav__item{ 
+    font-weight:lighter;
+    font-size: 16px;   
+    color: var(--primary-color);
+
+    margin-inline: 1rem !important;
+}
+
+.nav__item:hover {
     transition: 0.3s ease;
-    transform: translateY(-2px)  ;
+    transform: translateY(-2px);
+}
 
+.btn__nav{
+    font-size: 16px !important;
+    color: var(--primary-color) !important;
+    font-weight: bold !important;
+
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 20px !important;
+
+    padding-inline: 50px !important;
+}
+
+.logo{
+    height: 20%;
+    width: 20%;
+}
+
+i{
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 40px !important; 
 }
 .logoNavbar {
     width: 150px;
