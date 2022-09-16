@@ -1,0 +1,19 @@
+.titulo-bemvindo{
+    color: var(--primary-color);
+    font-size: 25px !important;
+}
+
+.botao{
+    color: var(--text-color) !important;
+    background-color: var(--primary-color) !important;
+}
+
+.caixa-inicio {
+    margin-top: 40px;
+
+}
+.subtitulo-bemvindo{
+    font-size: 20px !important;
+
+
+}

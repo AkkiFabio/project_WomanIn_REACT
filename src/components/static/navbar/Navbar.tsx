@@ -22,7 +22,6 @@ function Navbar() {
                                 <i>W/</i>
                             </Typography>
                         </Box>
-                                       
                         <Box display='flex' sx={{ flexGrow: 1 }}>
                             <Link to='/home' className='no__text__decorator'>
                             <Box className='cursor'>
@@ -73,7 +72,6 @@ export default Navbar;
     </Typography>
 </Box>
 </Link>
-
 <Link to="/Quem-Somos" className="no__text__decorator">
 <Box mx={1} className='cursor'>
     <Typography className='navbar__item' variant="h6" color="white">

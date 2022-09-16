@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .container__navbar{
+    background-color: var(--primary-color) !important;
+    padding-inline: 16rem;
     background-color: #fafafa !important;
     padding-inline: 16rem;
     padding-block: 1rem;
@@ -46,5 +48,8 @@ i{
     color: var(--primary-color);
     font-size: 40px !important; 
 }
-
+.logoNavbar {
+    width: 150px;
+    height: 50px;
+}
 
