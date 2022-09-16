@@ -3,7 +3,7 @@ import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/ma
 import './deletePost.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-import Post from '../../../models/Post';
+import PostModel from '../../../models/PostModel';
 import { searchId, deleteId } from '../../../services/Service';
 
 function DeletePost() {
@@ -11,7 +11,7 @@ function DeletePost() {
     let history = useNavigate();
     const { id } = useParams<{id: string}>();
     const [token, setToken] = useLocalStorage("token");
-    const [post, setPost] = useState<Post>();
+    const [post, setPost] = useState<PostModel>();
 
     useEffect(() => {
         if(token == ''){

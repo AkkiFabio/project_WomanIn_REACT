@@ -1,10 +1,10 @@
 import Category from "./Category";
 
-interface Post{
+interface PostModel{
     id: number;
     title: string;
     description: string;
     category: Category|null
 }
 
-export default Post;
+export default PostModel;

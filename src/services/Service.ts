@@ -25,7 +25,7 @@ export const searchId = async (url: any, setDado: any, header: any) => {
 }
 
 ///post
-export const post = async (url: any, setDado: any, header: any, dados: any) => {
+export const post = async (url: any, dados: any, setDado: any, header: any) => {
     const resposta = await api.post(url, header, dados)
     setDado(resposta.data)
 }
