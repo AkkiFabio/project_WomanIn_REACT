@@ -104,7 +104,7 @@ function PostForm(){
 
     return(
         <Container maxWidth='sm' className='topo'>
-            <form>
+            <form onSubmit={onSubmit}>
                 <Typography variant='h3' color='textSecondary' component='h1' align='center'>
                     Formulário de cadastro de postagem
                 </Typography>
