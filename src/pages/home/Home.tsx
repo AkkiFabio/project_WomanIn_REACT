@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom'
@@ -9,7 +9,9 @@ import HomeImg from '../../img/home_img.svg'
 import Typed from "react-typed";
 import CursosImg from '../../img/Cursos.svg'
 import ConexoesImg from '../../img/Conexoes.svg'
-import ModalPost from '../../components/posts/modalPost/modalPost';
+import ModalPost from '../../components/posts/modalPost/ModalPost';
+import { useNavigate } from 'react-router-dom';
+import useLocalStorage from 'react-use-localstorage';
 
 
 

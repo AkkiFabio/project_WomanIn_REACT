@@ -44,20 +44,20 @@ function PostForm(){
     useEffect(() => {
         getCategory()
         if (id !== undefined) {
-            findByIdPost(id)
+            findPostById(id)
         }
     }, [id])
 
     async function getCategory() {
-        await search("/api/Category", setCategory, {
+        await search("/api/Category", setCategories, {
             headers: {
                 'Authorization': token
             }
         })
     }
 
-    async function findByIdPost(id: string) {
-        await searchId(`/api/Category/id/${id}`, setPost, {
+    async function findPostById(id: string) {
+        await searchId(`/api/Post/id/${id}`, setPost, {
             headers: {
                 'Authorization': token
             }
@@ -118,9 +118,9 @@ function PostForm(){
                 <FormControl>
                     <InputLabel id='demo-simple-select-helper-label'>Categoria</InputLabel>
                     <Select 
-                    labelId='demo-simple-select-helper-label' 
-                    id='demo-simple-select-helper'
-                    onChange={(e) => searchId(`/api/Category/id/${e.target.value}`, setCategory, {
+                        labelId='demo-simple-select-helper-label' 
+                        id='demo-simple-select-helper'
+                        onChange={(e) => searchId(`/api/Category/id/${e.target.value}`, setCategory, {
                         headers: {
                             'Authorization': token
                         }

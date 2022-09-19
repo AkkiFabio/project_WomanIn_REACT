@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Box, Card, CardActions, Button, Typography, CardContent } from '@mui/material';
 import './postList.css';
 import useLocalStorage from 'react-use-localstorage';
-import { post, search } from '../../../services/Service';
+import { search } from '../../../services/Service';
 import Post from '../../../models/PostModel';
 
 function PostList() {
