@@ -6,35 +6,51 @@ import Category from '../../../models/Category';
 import PostModel from '../../../models/PostModel';
 import { put, post as servicePost, search, searchId } from '../../../services/Service';
 import './postForm.css';
+import '../../../../src/root.css';
 
-function PostForm(){
-    
+export interface PostDTO {
+    title: string;
+    description: string;
+    creator: {
+        id: number;
+    };
+    category: {
+        id: number;
+    }
+}
+
+function PostForm() {
+
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [categories, setCategories] = useState<Category[]>([])
-    const [token, setToken] = useLocalStorage('token');
+    const [token] = useLocalStorage('token');
+    const [idUser] = useLocalStorage('id');
 
-    useEffect(() => {
-        if (token == "") {
-            alert("Você precisa estar logado")
-            navigate("/login")
-
-        }
-    }, [token])
-      
     const [category, setCategory] = useState<Category>(
         {
             id: 0,
             name: ''
         })
-    const [post, setPost] = useState<PostModel>({
-        id: 0,
+    const [post, setPost] = useState<PostDTO>({
         title: '',
         description: '',
-        category: null
+        creator: {
+            id: parseInt(idUser)
+        },
+        category: {
+            id: 1
+        }
     })
 
-    useEffect(() => { 
+    useEffect(() => {
+        if (token == "") {
+            alert("Você precisa estar logado")
+            navigate("/login")
+        }
+    }, [token])
+
+    useEffect(() => {
         setPost({
             ...post,
             category: category
@@ -65,13 +81,11 @@ function PostForm(){
     }
 
     function updatedPost(e: ChangeEvent<HTMLInputElement>) {
-
         setPost({
             ...post,
             [e.target.name]: e.target.value,
             category: category
         })
-
     }
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
@@ -99,10 +113,8 @@ function PostForm(){
     function back() {
         navigate('/postagens')
     }
-
     
-
-    return(
+    return (
         <Container maxWidth='sm' className='topo'>
             <form onSubmit={onSubmit}>
                 <Typography variant='h3' color='textSecondary' component='h1' align='center'>
@@ -117,16 +129,16 @@ function PostForm(){
 
                 <FormControl>
                     <InputLabel id='demo-simple-select-helper-label'>Categoria</InputLabel>
-                    <Select 
-                        labelId='demo-simple-select-helper-label' 
+                    <Select
+                        labelId='demo-simple-select-helper-label'
                         id='demo-simple-select-helper'
                         onChange={(e) => searchId(`/api/Category/id/${e.target.value}`, setCategory, {
-                        headers: {
-                            'Authorization': token
-                        }
+                            headers: {
+                                'Authorization': token
+                            }
                         })}>
 
-                         {
+                        {
                             categories.map(category => (
                                 <MenuItem value={category.id}>{category.name}</MenuItem>
                             ))

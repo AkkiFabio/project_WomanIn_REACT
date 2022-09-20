@@ -1,0 +1,47 @@
+#my_profile {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#my_profile #data_user {
+    width: 100%;
+    background-color: var(--primary-color);
+    flex: 0 300px;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+}
+
+#my_profile #posts_user {
+    width: 100%;
+    background-color: #E9DAF4;
+    flex: 0 1000px;
+    padding: 10px;
+    color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    #my_profile {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+.bgvagas{
+    background-color: #F5E8FF;
+}
+
+.bgperfil{
+    background-color: #E9DAF4;
+}
+
+.bgConexoes{
+    background-color: #F4EFFF;
+}

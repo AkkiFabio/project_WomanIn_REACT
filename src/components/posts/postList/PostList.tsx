@@ -61,7 +61,7 @@ function PostList() {
 
                                 <CardActions>
                                     <Box display='flex' justifyContent='center' mb={1.5}>
-                                        <Link to={`/formularioPostagem/${post.id}`} className='text-decorator-none'>
+                                        <Link to={`/cadastroPost/${post.id}`} className='text-decorator-none'>
                                             <Box mx={1}>
                                                 <Button variant='contained' className='atualizar' size='small'>
                                                     Atualizar

@@ -9,9 +9,10 @@ export const cadastroUsuario = async (url: any, dados: any, setDado: any) => {
     setDado(resposta.data)
 }
 
-export const login = async (url: any, dados: any, setDado: any) => {
+export const login = async (url: any, dados: any, setDado: any, setIdUser: any) => {
     const resposta = await api.post(url, dados)
     setDado(resposta.data.token)
+    setIdUser(resposta.data.user.id)
 }
 
 export const search = async(url: any, setDado: any, header: any) => {
@@ -26,13 +27,13 @@ export const searchId = async (url: any, setDado: any, header: any) => {
 
 ///post
 export const post = async (url: any, dados: any, setDado: any, header: any) => {
-    const resposta = await api.post(url, header, dados)
+    const resposta = await api.post(url, dados, header)
     setDado(resposta.data)
 }
 
 ///put
 export const put = async (url: any, setDado: any, header: any, dados: any) => {
-    const resposta = await api.put(url, header, dados)
+    const resposta = await api.put(url, dados, header)
     setDado(resposta.data)
 }
 

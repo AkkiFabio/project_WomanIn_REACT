@@ -11,6 +11,7 @@ function Login(){
 
     let navigate = useNavigate();
     const [token, setToken] = useLocalStorage('token');
+    const [idUser, setIdUser] = useLocalStorage('id');
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             email: '',
@@ -37,7 +38,7 @@ function Login(){
             e.preventDefault();
 
             try{
-                await login (`api/User/login`, userLogin, setToken)
+                await login (`api/User/login`, userLogin, setToken, setIdUser)
 
                 alert("Usuário logado com sucesso!");
             }catch(error){

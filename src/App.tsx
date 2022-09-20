@@ -15,6 +15,7 @@ import DeletePost from './components/posts/deletePost/deletePost';
 import { LocalPostOfficeRounded } from '@mui/icons-material';
 import AboutUs from './pages/aboutUs/AboutUs';
 import ScrollButton from './components/static/ScrollButton/ScrollButton';
+import Profile from './pages/profile/Profile';
 function App() {
   return (
     <>
@@ -28,6 +29,7 @@ function App() {
         <Route path='/cadastro' element={<UserForm />}/>
         <Route path='/categorias' element={<CategoryList />} />
         <Route path='/postagens' element={<PostList />} />
+        <Route path='/meu-perfil' element={<Profile />} />
         <Route path='/quem-somos' element={<AboutUs />} />
         <Route path='/cadastroPost'element={<PostForm />} />
         <Route path='/cadastroPost/:id' element={<PostForm />} />

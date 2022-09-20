@@ -9,13 +9,13 @@
 /* COLOCAR NOSSAS CORES */
 
 .card{
-    border-color: #ff5475;
+    border-color: var(--primary-color) !important;
     margin-top: 100px;
 }
 
 .atualizar{
     margin: left;
-    background-color: #d6254d;
+    background-color: var(--secondary-color) !important;
     color: #fffee4;
 }
 
@@ -28,3 +28,10 @@
 .posts{
     color: #ff9036;
 }
+
+
+/* .btn__post:hover{
+    background-color: var(--hover) !important;
+    color: #fafafa !important;
+    border: 1px solid var(--hover) !important;
+} */
