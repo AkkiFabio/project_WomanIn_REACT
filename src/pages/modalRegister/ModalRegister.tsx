@@ -23,11 +23,12 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         paper: {
             position: 'absolute',
-            width: 750,
-            height: 750,
+            width: 700,
+            height: 700,
             backgroundColor: theme.palette.background.paper,
             boxShadow: theme.shadows[5],
             padding: theme.spacing(5, 4, 3),
+            borderRadius: '25px'
         },
     }),
 );

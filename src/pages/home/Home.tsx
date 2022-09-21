@@ -20,12 +20,12 @@ function Home() {
     let navigate = useNavigate();
     const [token, setToken] = useLocalStorage("token");
 
-    useEffect(() => {
-        if(token == '') {
-            alert("Você precisa estar logado")
-            navigate("/login")
-        }
-    }, [token])
+    // useEffect(() => {
+    //     if(token == '') {
+    //         alert("Você precisa estar logado")
+    //         navigate("/login")
+    //     }
+    // }, [token])
 
     return (
         <>
