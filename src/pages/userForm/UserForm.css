@@ -27,9 +27,7 @@
 }
 
 .buttons{
-    display: flex !important;
-    /* align-content: space-between !important; */
-    /* justify-content: center !important; */
+    margin-top: 10px;
     justify-content: space-between;
 }
 

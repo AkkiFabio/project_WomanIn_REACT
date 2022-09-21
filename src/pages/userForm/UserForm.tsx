@@ -131,7 +131,7 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import User from "../../models/User";
 import { cadastroUsuario } from "../../services/Service";
-import { Grid, Typography, TextField, Box, Button } from "@mui/material";
+import { Grid, Typography, TextField, Box, Button, Select, MenuItem, FormControl, InputLabel, FormHelperText } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { grid } from "@mui/system";
 import './UserForm.css';
@@ -140,6 +140,7 @@ import CancelOutlined from '@mui/icons-material/Cancel';
 
 
 function UserForm() {
+    
     let navigate = useNavigate();
 
     const [confirmarSenha, setConfirmarSenha] = useState<String>("")
@@ -151,6 +152,7 @@ function UserForm() {
             cpF_CNPJ: "",
             email: "",
             password: "",
+            type: ""
         }
     );
 
@@ -161,6 +163,7 @@ function UserForm() {
             cpF_CNPJ: "",
             email: "",
             password: "",
+            type: ""
         }
     );
 
@@ -182,6 +185,7 @@ function UserForm() {
             ...user,
             [e.target.name]: e.target.value
         })
+        console.log(user)
     }
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>){
@@ -203,40 +207,55 @@ function UserForm() {
     return (
         <Grid
         container
-        spacing={0}
         direction="column"
         alignItems="center"
-        justifyContent="center"
-        style={{ minHeight: '100vh'}}>
+        justifyContent="center">
       
             <Grid >
-                <Box className="bg__form">
+                <Box>
                     <form action="" className="campos" onSubmit={onSubmit}>
                         <Typography variant='h3'gutterBottom component='h3'align='center' className="headliner">
-                            Cadastro 
+                            Crie uma conta
                         </Typography>
                         <Box display="flex" flexDirection='column'>
-                            <TextField value={user.name} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='name' label='Nome' variant='outlined' name='name' margin='normal' className="textfieldbg"></TextField>
-                            <TextField value={user.cpF_CNPJ} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='cpF_CNPJ' label='CPF' variant='outlined' name='cpF_CNPJ' margin='normal' className="textfieldbg"></TextField> 
-                            <TextField value={user.email} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='email' label='E-mail'variant='outlined' name='email'margin='normal' className="textfieldbg"></TextField>
-                            <TextField value={user.password} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='password' label='Senha' variant='outlined' name='password' margin='normal' className="textfieldbg" type='password'></TextField>
-                            <TextField value={confirmarSenha} onChange={(e:ChangeEvent<HTMLInputElement>)=> confirmarSenhaHandle(e)} id='confirmPassword' label='Confirmar Senha' variant='outlined' name='confirmPassword' margin='normal' className="textfieldbg" type='password'></TextField>
+                        <FormControl
+                                style={{ marginTop: 25, marginRight: 350, marginBottom: 10 }}
+                                onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)}>
+
+                                <InputLabel htmlFor="banana">Tipo</InputLabel>
+                                <Select 
+                                    value={user.type}  
+                                    id='type'
+                                    name='type'
+                                        native
+                                        label='type'
+                                        inputProps={{
+                                            name: 'type',
+                                            id:'banana',
+                                        }} >
+                                    <option value='NORMAL'>Pessoa</option>
+                                    <option value='COMPANY'>Empresa</option>
+                                </Select>
+                            </FormControl> 
+
+                            <TextField value={user.name} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='name' label='Nome' variant='outlined' name='name' margin='normal'></TextField>
+                            <TextField value={user.cpF_CNPJ} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='cpF_CNPJ' label='CPF' variant='outlined' name='cpF_CNPJ' margin='normal'></TextField> 
+                            <TextField value={user.email} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='email' label='E-mail'variant='outlined' name='email'margin='normal'></TextField>
+                            <TextField value={user.password} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='password' label='Senha' variant='outlined' name='password' margin='normal' type='password'></TextField>
+                            <TextField value={confirmarSenha} onChange={(e:ChangeEvent<HTMLInputElement>)=> confirmarSenhaHandle(e)} id='confirmPassword' label='Confirmar Senha' variant='outlined' name='confirmPassword' margin='normal' type='password'></TextField>
+                            
+
+                            
+
                         </Box>
 
-                        <Box marginTop={2} textAlign='center' className="buttons">
-    
-                        <Link to='/login'>
-                            <CancelOutlined className="btn__secondary"/>
-                        </Link>
+                        <Box  textAlign='center' className="buttons">
                             <Button type='submit'variant='contained' className='btn__primary'>
                                 Confirmar
-                            </Button>
+                        </Button>
                         </Box>
                     </form>
                 </Box>
-            </Grid>
-            <Grid className="form__img" xs={12}>
-
             </Grid>
         </Grid >
     )

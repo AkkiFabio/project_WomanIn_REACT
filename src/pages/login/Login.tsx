@@ -5,6 +5,7 @@ import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';
 // // import { useDispatch } from 'react-redux'
 import UserLogin from '../../models/UserLogin';
+import ModalRegister from '../modalRegister/ModalRegister';
 import './Login.css'; 
 
 function Login(){
@@ -78,11 +79,17 @@ id='email' label='E-mail'variant='outlined' name='email'margin='normal' fullWidt
 
                     </Box>
                     
-                    <Link to='/cadastro'className='no__text__decorator'>
-                    <Typography variant='subtitle1'gutterBottom align='center' className='login__text'>
+                    {/* <Link to='/cadastro'className='no__text__decorator'>
+                    <Typography variant='subtitle1'gutterBottom align='center'>
                         Crie uma conta
                     </Typography>
-                    </Link>
+                    </Link> */}
+
+                    <Box display='flex' justifyContent='center'>
+                        <Box marginRight={1}>
+                            <ModalRegister />
+                        </Box>
+                    </Box>
                 </Box>
             </Box>
 
