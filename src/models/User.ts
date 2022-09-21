@@ -4,6 +4,7 @@ interface User {
     cpF_CNPJ: string;
     email: string;
     password: string;
+    type: string;
 }
 
 export default User;
