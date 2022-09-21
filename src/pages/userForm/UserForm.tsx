@@ -214,9 +214,17 @@ function UserForm() {
             <Grid >
                 <Box>
                     <form action="" className="campos" onSubmit={onSubmit}>
-                        <Typography variant='h3'gutterBottom component='h3'align='center' className="headliner">
+                        <Box >
+                        <Typography variant='h4' gutterBottom component='h3'align='left' className="form__headliner">
                             Crie uma conta
                         </Typography>
+                        <Box>
+                            <Typography variant='subtitle1' component='h3' align='left' className='form__subtitle'>
+                                É simples!
+                            </Typography>
+                        </Box>
+                        </Box>
+                        
                         <Box display="flex" flexDirection='column'>
                         <FormControl
                                 style={{ marginTop: 25, marginRight: 350, marginBottom: 10 }}
@@ -239,10 +247,17 @@ function UserForm() {
                             </FormControl> 
 
                             <TextField value={user.name} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='name' label='Nome' variant='outlined' name='name' margin='normal'></TextField>
-                            <TextField value={user.cpF_CNPJ} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='cpF_CNPJ' label='CPF' variant='outlined' name='cpF_CNPJ' margin='normal'></TextField> 
-                            <TextField value={user.email} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='email' label='E-mail'variant='outlined' name='email'margin='normal'></TextField>
-                            <TextField value={user.password} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='password' label='Senha' variant='outlined' name='password' margin='normal' type='password'></TextField>
-                            <TextField value={confirmarSenha} onChange={(e:ChangeEvent<HTMLInputElement>)=> confirmarSenhaHandle(e)} id='confirmPassword' label='Confirmar Senha' variant='outlined' name='confirmPassword' margin='normal' type='password'></TextField>
+                            <TextField value={user.cpF_CNPJ} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='cpF_CNPJ' label='CPF ou CNPJ' variant='outlined' name='cpF_CNPJ' margin='normal'></TextField> 
+
+                            <TextField value={user.email} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='email' label='E-mail'variant='outlined'    name='email'margin='normal'></TextField>
+
+                            <Box >
+                                <TextField value={user.password} onChange={(e:ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='password' label='Senha' variant='outlined' name='password'  margin='normal' type='password' style={{marginRight: 10, width: 245}}></TextField>
+                                <TextField value={confirmarSenha} onChange={(e:ChangeEvent<HTMLInputElement>)=> confirmarSenhaHandle(e)} id='confirmPassword' label='Confirmar Senha'   variant='outlined' name='confirmPassword' margin='normal' type='password' style={{width: 245}}></TextField>
+                            </Box>
+                        
+                            
+                            
                             
 
                             

@@ -8,9 +8,11 @@ import Logo from '../../../img/logo.svg'
 import HomeIcon from '@mui/icons-material/Home';
 import { post } from '../../../services/Service';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+import useLocalStorage from 'react-use-localstorage';
 
 function Navbar() {
     const [navbar, setNavbar] = useState(false)
+    const [token, setToken] = useLocalStorage('token');
 
     const changeBackground = () => {
         console.log(window.scrollY)
