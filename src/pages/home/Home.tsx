@@ -19,12 +19,16 @@ function Home() {
 
     let navigate = useNavigate();
     const [token, setToken] = useLocalStorage("token");
+    const [user] = useLocalStorage('user');
+    // let userJson = JSON.parse(user)
 
     useEffect(() => {
         if(token == '') {
             alert("Você precisa estar logado")
             navigate("/login")
         }
+        
+        // console.log(userJson)
     }, [token])
 
     return (

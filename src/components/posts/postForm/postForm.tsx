@@ -86,6 +86,7 @@ function PostForm() {
             [e.target.name]: e.target.value,
             category: category
         })
+        console.log(post)
     }
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {

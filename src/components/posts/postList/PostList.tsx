@@ -59,7 +59,7 @@ function PostList() {
                                     </Typography>
                                 </CardContent>
 
-                                <CardActions>
+                                {/* <CardActions>
                                     <Box display='flex' justifyContent='center' mb={1.5}>
                                         <Link to={`/cadastroPost/${post.id}`} className='text-decorator-none'>
                                             <Box mx={1}>
@@ -77,7 +77,7 @@ function PostList() {
                                             </Box>
                                         </Link>
                                     </Box>
-                                </CardActions>
+                                </CardActions> */}
                             </Card>
                         </Box>
                     )

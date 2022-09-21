@@ -15,6 +15,8 @@ export default function Profile() {
     let navigate = useNavigate();
     const [token] = useLocalStorage("token");
     const [idUser] = useLocalStorage("id");
+    const [user] = useLocalStorage('user');
+    let userJson = JSON.parse(user)
     const [posts, setPosts] = useState<PostModel[]>([])
 
     useEffect(() => {
@@ -49,7 +51,8 @@ export default function Profile() {
                             />
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
-                                    Debora
+                                    {/* {userJson.name} */}
+                                    Amanda
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
                                     Formada em tecnologia
