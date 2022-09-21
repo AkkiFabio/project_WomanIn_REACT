@@ -1,10 +1,11 @@
-.titulo-bemvindo{
-    color: var(--primary-color);
-    font-size: 25px !important;
+.first {
+    margin-top: 100px;
 }
 
-.first {
-    margin-top: 50px;
+.titulo{
+    color: var(--primary-color) !important;
+    font-size: 36px !important;
+    text-align: center;
 }
 
 .botao{
@@ -12,12 +13,44 @@
     background-color: var(--primary-color) !important;
 }
 
-.caixa-inicio {
-    margin-top: 40px;
-
+.botao:hover{
+    background-color: var(--hover) !important;
+    color: var(--text-color-dark) !important;
+    transition: 0.2s !important;
 }
-.subtitulo-bemvindo{
+
+.fontes{
+    text-decoration: none;
+    color: var(--secondary-color) !important;
+}
+
+
+.fontes:hover{
+    color: var(--secondary-color-lg) !important;
+    text-decoration: underline;
+}
+
+.text__content{
+    margin: 10px;
+    color: #FAFAFA !important;
     font-size: 20px !important;
+    text-align: left !important;
+}
 
+.text__content_dark{
+    color: var(--text-color-dark);
+    font-size: 20px !important;
+    text-align: left !important;
+}
 
+.bgVagas{
+    background-color: rgb(193, 182, 241);
+}
+
+.bgCursos{
+    background-color: #E9DAF4;
+}
+
+.bgConexoes{
+    background-color: #F4EFFF;
 }
