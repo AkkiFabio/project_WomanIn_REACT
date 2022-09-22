@@ -1,5 +1,5 @@
 .login__img {
-    background-image: url(../../img/Social.svg);
+    background-image: url(../../img/Social2.svg);
     background-repeat: no-repeat; 
     width: 100vh; 
     min-height: 100vh; 
@@ -8,4 +8,10 @@
 } 
 .login__text{
     color: var(--primary-color);
+}
+
+.headliner{
+    color: var(--primary-color) !important;
+    font-size: 54px !important;
+    text-align: center;
 }

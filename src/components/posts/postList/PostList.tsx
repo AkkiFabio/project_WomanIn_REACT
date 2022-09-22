@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Box, Card, CardActions, Button, Typography, CardContent } from '@mui/material';
+import { Box, Card, CardActions, Button, Typography, CardContent, CardMedia } from '@mui/material';
 import './postList.css';
 import useLocalStorage from 'react-use-localstorage';
 import { search } from '../../../services/Service';
 import Post from '../../../models/PostModel';
+import ModalPost from '../modalPost/ModalPost';
+import CursosImg from '../../../img/Cursos.svg'
 
 function PostList() {
 
@@ -34,60 +36,40 @@ function PostList() {
 
     return (
         <>
-
-            {
-                posts.length > 0
-                    ?
-                    posts.map(post =>
-                        <Box m={2} >
-                            <Card variant='outlined' className='card'>
-                                <CardContent>
-                                    <Typography color='textSecondary' gutterBottom className='posts'>
-                                        Postagens
-                                    </Typography>
-
-                                    <Typography variant='h5' component='h2' className='posts'>
+            <Box display='flex' justifyContent='center' className='newpostbtn'>
+                <Box marginRight={1}>
+                    <ModalPost />
+                </Box>
+            </Box>
+            <main id='post_feed'>
+                {
+                    posts.length > 0
+                        ?
+                        posts.map(post =>
+                            <article className='card-content'>
+                                <header>
+                                    <Typography variant='h5' component='h2' className='posts posttitle'>
                                         {post.title}
                                     </Typography>
+                                </header>
+                                <footer>
 
-                                    <Typography variant='body2' component='p' className='posts'>
+                                    <Typography variant='body2' component='p' className='posts postdescription'>
                                         {post.description}
                                     </Typography>
 
-                                    <Typography variant='body2' component='p' className='posts'>
-                                        {post.category?.name}
+                                    <Typography variant='body2' component='p' className='posts postcategory'>
+                                        Categoria: {post.category?.name}
                                     </Typography>
-                                </CardContent>
+                                </footer>
 
-                                {/* <CardActions>
-                                    <Box display='flex' justifyContent='center' mb={1.5}>
-                                        <Link to={`/cadastroPost/${post.id}`} className='text-decorator-none'>
-                                            <Box mx={1}>
-                                                <Button variant='contained' className='atualizar' size='small'>
-                                                    Atualizar
-                                                </Button>
-                                            </Box>
-                                        </Link>
+                            </article>
 
-                                        <Link to={`/deletarPost/${post.id}`} className='text-decorator-none'>
-                                            <Box mx={1}>
-                                                <Button variant='contained' className='deletar' size='small'>
-                                                    Deletar
-                                                </Button>
-                                            </Box>
-                                        </Link>
-                                    </Box>
-                                </CardActions> */}
-                            </Card>
-                        </Box>
-                    )
-                    :
-                    <h1>NAO TEM NADA!!!!!!</h1>
-            }
-
-
-
-
+                        )
+                        :
+                        <h1>NAO TEM NADA!!!!!!</h1>
+                }
+            </main>
         </>
     )
 

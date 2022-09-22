@@ -40,7 +40,8 @@ function Login() {
         e.preventDefault();
 
         try {
-            await login(`api/User/login`, userLogin, setToken, setIdUser, setUser)
+            await login(`api/User/login`, userLogin, setToken, setIdUser, setUser )
+            // , setUser 
 
             alert("Usuário logado com sucesso!");
         } catch (error) {

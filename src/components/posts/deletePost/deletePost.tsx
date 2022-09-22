@@ -51,7 +51,7 @@ function DeletePost() {
     return (
         <>
             <Box m={2}>
-                <Card variant='outlined' className='card'>
+                <Card variant='outlined' className='carddeletepost'>
                     <CardContent>
                         <Box justifyContent='center'>
                             <Typography color='textSecondary' gutterBottom>

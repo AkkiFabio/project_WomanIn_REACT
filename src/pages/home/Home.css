@@ -23,6 +23,17 @@ span{
     font-weight: bold !important;
 }
 
+.titulo-bemvindo{
+    color: var(--primary-color);
+    font-weight: bold !important;
+}
+
+.subitulo-bemvindo{
+    color: var(--primary-color-dark);
+    font-style: italic;
+}
+
+
 .btn__home{
     margin-top: 20px !important;
 

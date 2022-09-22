@@ -1,3 +1,26 @@
 .topo{
     margin-top: 100px !important;
 }
+
+.btn__submitform{
+    margin-top: 20px !important;
+
+    font-size: 20px !important;
+    color: var(--primary-color) !important;
+    font-weight: bold !important;
+    background-color: #fafafa !important;
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 20px !important;
+
+    padding-inline: 100px !important;
+}
+
+.btn__submitform:hover{
+    background-color: var(--hover) !important;
+    color: #fafafa !important;
+    border: 1px solid var(--hover) !important;
+}
+
+.titulopostform{
+    color: var(--primary-color);   
+}

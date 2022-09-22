@@ -23,8 +23,10 @@ function Footer() {
                     </Box> */}
 
                     <Box className="footer__item">
-                        <Typography variant="h5" paragraph>WomanIn </Typography>
-                        <Typography variant='subtitle1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, mollitia.</Typography>
+                        <Typography variant="h5" paragraph className="logofooter">WomanIn </Typography>
+                        <Typography variant='subtitle1'>A rede social das mulheres,</Typography>
+                        <Typography variant='subtitle1'>do empoderamento,</Typography>
+                        <Typography variant='subtitle1'>delas.</Typography>
                     </Box>
                           
                     <Box className="footer__item">
@@ -68,13 +70,13 @@ function Footer() {
                         </Box>
 
                         <Box display="flex" alignItems="center" justifyContent="center">
-                            <a href="https://www.facebook.com/generationbrasil" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
                                 <FacebookIcon className="social"/>
                             </a>
-                            <a href="https://www.instagram.com/generationbrasil/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
                                 <InstagramIcon className="social"/>
                             </a>
-                            <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
                                 <LinkedInIcon className="social"/>
                             </a>
                         </Box>

@@ -6,9 +6,13 @@ import useLocalStorage from 'react-use-localstorage';
 import PostModel from '../../models/PostModel';
 import { search } from '../../services/Service';
 import '../../../src/root.css'
-import Fotoperfil from '../../img/fotoperfil.svg';
+// import Fotoperfil from '../../img/fotoperfil.svg';
 
 import './Profile.css'
+import User from '../../models/User';
+import ModalPostUpdate from '../../components/posts/modalPost/ModalPostUpdate';
+
+
 
 export default function Profile() {
 
@@ -16,20 +20,38 @@ export default function Profile() {
     const [token] = useLocalStorage("token");
     const [idUser] = useLocalStorage("id");
     const [user] = useLocalStorage('user');
-    let userJson = JSON.parse(user)
-    const [posts, setPosts] = useState<PostModel[]>([])
+    let userJson: any;
+    const [posts, setPosts] = useState<PostModel[]>([]);
+    const [userProfile, setUserProfile] = useState<User>(
+        {
+            id: parseInt(userJson?.id),
+            name: userJson?.name,
+            cpF_CNPJ: userJson?.cpF_CNPJ,
+            email: userJson?.email,
+            password: userJson?.password,
+            type: userJson?.type
+        }
+    );
 
     useEffect(() => {
-        getPosts()
-        if (token === '') {
+        if (token === '' && user === '') {
             alert("Você precisa estar logado")
             navigate("/login")
+        } else {
+            userJson = JSON.parse(user);
+            getPosts()
+            setUserProfile({
+                id: parseInt(userJson?.id),
+                name: userJson?.name,
+                cpF_CNPJ: userJson?.cpF_CNPJ,
+                email: userJson?.email,
+                password: userJson?.password,
+                type: userJson?.type
+            })
         }
-
-    }, [token])
+    }, [userJson])
 
     async function getPosts() {
-        console.log(token);
         await search("api/Post", setPosts, {
             headers: {
                 'Authorization': token
@@ -50,10 +72,12 @@ export default function Profile() {
                                 alt="foto do perfil"
                             />
                             <CardContent>
+
                                 <Typography gutterBottom variant="h5" component="div">
-                                    {/* {userJson.name} */}
-                                    Amanda
+                                    {userProfile.name}
                                 </Typography>
+
+
                                 <Typography variant="body2" color="text.secondary">
                                     Formada em tecnologia
                                 </Typography>
@@ -65,7 +89,7 @@ export default function Profile() {
                             </Button>
                         </CardActions>
                     </Card>
-                    {/* <h1>Perfil</h1> */}
+                    
 
                 </section>
                 <section id='posts_user'>
@@ -99,17 +123,15 @@ export default function Profile() {
 
                                                 <CardActions>
                                                     <Box display='flex' justifyContent='center' mb={1.5}>
-                                                        <Link to={`/cadastroPost/${post.id}`} className='text-decorator-none'>
-                                                            <Box mx={1}>
-                                                                <Button variant='contained' className='atualizar' size='small'>
-                                                                    Atualizar
-                                                                </Button>
+                                                        
+                                                            <Box mx={1}>                                                                                
+                                                            <ModalPostUpdate/>
                                                             </Box>
-                                                        </Link>
+                                                        
 
                                                         <Link to={`/deletarPost/${post.id}`} className='text-decorator-none'>
                                                             <Box mx={1}>
-                                                                <Button variant='contained' className='deletar' size='small'>
+                                                                <Button variant='contained' className='btn__Delete' size='small'>
                                                                     Deletar
                                                                 </Button>
                                                             </Box>

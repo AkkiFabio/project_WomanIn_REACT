@@ -180,12 +180,10 @@ function UserForm() {
     }
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>){
-
         setUser({
             ...user,
             [e.target.name]: e.target.value
         })
-        console.log(user)
     }
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>){
@@ -241,6 +239,7 @@ function UserForm() {
                                             name: 'type',
                                             id:'banana',
                                         }} >
+                                    <option aria-label='none' value=''></option>
                                     <option value='NORMAL'>Pessoa</option>
                                     <option value='COMPANY'>Empresa</option>
                                 </Select>

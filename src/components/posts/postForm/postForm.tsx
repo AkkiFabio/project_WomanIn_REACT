@@ -113,20 +113,21 @@ function PostForm() {
 
     function back() {
         navigate('/postagens')
+        window.location.reload();        
     }
     
     return (
-        <Container maxWidth='sm' className='topo'>
+        <Container maxWidth='sm' className=''>
             <form onSubmit={onSubmit}>
-                <Typography variant='h3' color='textSecondary' component='h1' align='center'>
-                    Formulário de cadastro de postagem
+                <Typography variant='h3' className='titulopostform' component='h1' align='center'>
+                    Preencha sua nova postagem!
                 </Typography>
 
                 <TextField value={post.title} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPost(e)}
-                    id='title' label='title' variant='outlined' name='title' margin='normal' fullWidth></TextField>
+                    id='title' label='Título' variant='outlined' name='title' margin='normal' fullWidth></TextField>
 
                 <TextField value={post.description} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPost(e)}
-                    id='description' label='description' name='description' variant='outlined' margin='normal' fullWidth></TextField>
+                    id='description' label='Descrição' name='description' variant='outlined' margin='normal' fullWidth></TextField>
 
                 <FormControl>
                     <InputLabel id='demo-simple-select-helper-label'>Categoria</InputLabel>
@@ -149,7 +150,7 @@ function PostForm() {
 
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
 
-                    <Button type='submit' variant='contained' color='primary'>
+                    <Button type='submit' variant='contained' className='btn__submitform'>
                         Finalizar
                     </Button>
                 </FormControl>

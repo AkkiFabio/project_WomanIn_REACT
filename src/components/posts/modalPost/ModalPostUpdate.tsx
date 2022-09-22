@@ -1,11 +1,10 @@
 import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { Button, Typography } from "@mui/material"
+import { Button } from "@mui/material"
 import CloseIcon from '@material-ui/icons/Close';
-import './ModalRegister.css';
-import UserForm from '../userForm/UserForm';
+import './ModalPostUpdate.css';
+import PostForm from '../postForm/postForm';
 import { Box, Modal } from '@mui/material';
-import '../../root.css'
 
 
 function getModalStyle() {
@@ -23,17 +22,16 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         paper: {
             position: 'absolute',
-            width: 700,
-            height: 700,
+            width: 400,
             backgroundColor: theme.palette.background.paper,
+            border: '2px solid #000',
             boxShadow: theme.shadows[5],
-            padding: theme.spacing(5, 4, 3),
-            borderRadius: '25px'
+            padding: theme.spacing(2, 4, 3),
         },
     }),
 );
 
-function ModalRegister() {
+function ModalPostUpdate() {
 
     const classes = useStyles();
     const [modalStyle] = React.useState(getModalStyle);
@@ -54,16 +52,17 @@ function ModalRegister() {
 
             </Box>
 
-            <UserForm />
+            <PostForm />
 
         </div>
     );
 
     return (
         <div>
-            <Typography className='login__text cursor mb-1'
-
-                onClick={handleOpen}>Crie uma conta</Typography>
+            <Button
+                variant="outlined"
+                className="btnModalPostUpdate"
+                onClick={handleOpen}>Atualizar</Button>
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -76,4 +75,4 @@ function ModalRegister() {
     );
 }
 
-export default ModalRegister;
+export default ModalPostUpdate;

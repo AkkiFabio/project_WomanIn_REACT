@@ -18,7 +18,7 @@ function AboutUs() {
                 </Grid>
                 <Grid alignItems='center' item xs={6}>
                     <Box paddingX={5}>
-                        <Typography variant='h1' className='titulo'>Nossa Missão</Typography>
+                        <Typography variant='h1' className='tituloaboutus'>Nossa Missão</Typography>
                         <Typography variant='body1' gutterBottom align='center' className='text__content'>
                             A WomanIn é uma iniciativa com objetivo de reduzir a desigualdade de gênero. <br />
                             Historicamente, as mulheres ocuparam menor número em termos percentuais em postos de trabalho se comparadas ao homens.

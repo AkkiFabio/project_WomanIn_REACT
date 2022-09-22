@@ -8,16 +8,18 @@ import './categoryList.css';
 import '../../../root.css';
 
 function CategoryList() {
-  const [categories, setTemas] = useState<Category[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  const [categories, setTemas] = useState<Category[]>([]);
+  const [token] = useLocalStorage('token');
+  const [user] = useLocalStorage('user');
+  let userJson = JSON.parse(user);
   let navigate = useNavigate();
 
   useEffect(() => {
-    if (token == '') {
-      alert("Você precisa estar logado.")
+    if (token === '' || userJson.type !== 'ADMIN') {
+      alert("Voce não tem autorização.")
       navigate("/login")
     }
-  }, [token])
+  }, [token, userJson])
 
   async function getTema() {
     await search('api/Category', setTemas, {

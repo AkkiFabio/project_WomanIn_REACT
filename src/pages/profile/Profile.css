@@ -45,3 +45,23 @@
 .bgConexoes{
     background-color: #F4EFFF;
 }
+
+.btn__Delete{
+    border-color: var(--primary-color) !important;
+    color: white !important;
+    font-size: 16px !important;
+    background-color: var(--primary-color) !important;
+    font-weight: bold !important;
+
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 20px !important;
+
+    padding-inline: 50px !important;
+}
+
+.btn__Delete:hover{
+    color: var(--text-color-dark) !important;
+    background-color: #fafafa !important;
+    border: 1px solid var(--hover) !important;
+    border-color: black !important;
+}

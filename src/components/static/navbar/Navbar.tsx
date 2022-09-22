@@ -14,9 +14,11 @@ function Navbar() {
     let navigate = useNavigate();
     const [navbar, setNavbar] = useState(false)
     const [token, setToken] = useLocalStorage('token');
+    const [user, setUser] = useLocalStorage('user');
+    const [idUser, setIdUser] = useLocalStorage('id');
 
     const changeBackground = () => {
-        console.log(window.scrollY)
+
         if (window.scrollY >= 66) {
             setNavbar(true)
         } else {
@@ -25,15 +27,13 @@ function Navbar() {
     }
 
     useEffect(() => {
-        if(token === '') {
-            alert("Você precisa estar logado")
-            navigate("/login")
-        }
         changeBackground()
         window.addEventListener('scroll', changeBackground)
-    }, [token])
+    })
 
     function goLogout (){
+        setIdUser('')
+        setUser('')
         setToken('')
         navigate('/login')
     }
@@ -45,8 +45,8 @@ function Navbar() {
                     <AppBar elevation={0} className={navbar ? "nav__active" : "container__navbar"} position="fixed">
                         <Toolbar>
                             <Box sx={{ flexGrow: 1 }}>
-                                <Typography variant="h6" component="div" className={navbar ? 'womanin__active' : 'womanin'}>
-                                    <i>W/</i>
+                                <Typography variant="h6" component="div" className={navbar ? 'womanin__active' : 'womanin'} >
+                                    <i>W/</i>                                   
                                 </Typography>
                             </Box>
                             <Box display='flex' sx={{ flexGrow: 1 }}>
