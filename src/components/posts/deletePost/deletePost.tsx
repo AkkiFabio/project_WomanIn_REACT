@@ -50,7 +50,7 @@ function DeletePost() {
 
     return (
         <>
-            <Box m={2}>
+            <Box m={2} >
                 <Card variant='outlined' className='carddeletepost'>
                     <CardContent>
                         <Box justifyContent='center'>
@@ -67,13 +67,13 @@ function DeletePost() {
                     <CardActions>
                         <Box display='flex' justifyContent='start' ml={1.0} mb={2}>
                             <Box mx={2}>
-                                <Button onClick={Sim} variant='contained' className='marginLeft' size='large' color='primary'>
+                                <Button onClick={Sim} variant='contained' className='btn__DeleteYes' >
                                     Sim
                                 </Button>
                             </Box>
 
                             <Box mx={2}>
-                                <Button onClick={Nao} variant='contained' size='large' color='secondary'>
+                                <Button onClick={Nao} variant='contained'  className='btn__DeleteNo'>
                                     Não
                                 </Button>
                             </Box>

@@ -120,7 +120,7 @@ function PostForm() {
         <Container maxWidth='sm' className=''>
             <form onSubmit={onSubmit}>
                 <Typography variant='h3' className='titulopostform' component='h1' align='center'>
-                    Preencha sua nova postagem!
+                    Preencha sua postagem!
                 </Typography>
 
                 <TextField value={post.title} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPost(e)}
