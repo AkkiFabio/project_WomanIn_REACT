@@ -5,6 +5,7 @@ import Category from '../../../models/Category';
 import { useNavigate, useParams } from 'react-router-dom';
 import './deleteCategory.css';
 import { searchId, deleteId } from '../../../services/Service';
+import { toast } from 'react-toastify';
 
 function DeleteCategory() {
 
@@ -15,7 +16,16 @@ function DeleteCategory() {
 
     useEffect(() => {
         if(token == '')
-        alert("Você precisa estar logado")
+        toast.error('Você precisa estar logado!', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+            });
         history("/login")
     }, [token])
 
@@ -40,7 +50,16 @@ function DeleteCategory() {
             'Authorization': token
             }
         });
-        alert('Categoria deletada com sucesso')
+        toast.success('Categoria deletada com sucesso!', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+            });
     }
 
     function Nao(){

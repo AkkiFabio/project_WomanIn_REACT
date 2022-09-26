@@ -6,6 +6,8 @@ import useLocalStorage from 'react-use-localstorage';
 import { search } from '../../../services/Service';
 import './categoryList.css';
 import '../../../root.css';
+import { toast } from 'react-toastify';
+
 
 function CategoryList() {
   const [categories, setTemas] = useState<Category[]>([]);
@@ -16,7 +18,16 @@ function CategoryList() {
 
   useEffect(() => {
     if (token === '' || userJson.type !== 'ADMIN') {
-      alert("Voce não tem autorização.")
+      toast.error('Voce não tem autorização!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+        });
       navigate("/login")
     }
   }, [token, userJson])

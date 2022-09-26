@@ -10,7 +10,7 @@ import '../../../src/root.css'
 
 import './Profile.css'
 import User from '../../models/User';
-import ModalPostUpdate from '../../components/posts/modalPost/ModalPostUpdate';
+import { toast } from 'react-toastify';
 
 
 
@@ -35,7 +35,16 @@ export default function Profile() {
 
     useEffect(() => {
         if (token === '' && user === '') {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
             navigate("/login")
         } else {
             userJson = JSON.parse(user);

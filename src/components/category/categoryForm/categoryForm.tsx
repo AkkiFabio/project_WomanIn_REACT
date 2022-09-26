@@ -9,6 +9,7 @@ import { findByDisplayValue } from '@testing-library/react';
 import { searchId, post, put } from '../../../services/Service';
 import { backdropClasses } from '@mui/material';
 import { FunctionsTwoTone } from '@mui/icons-material';
+import { toast } from 'react-toastify';
 
 function CategoryForm() {
 
@@ -22,7 +23,16 @@ function CategoryForm() {
 
     useEffect(() => {
         if(token == '')
-        alert("Você precisa estar logado")
+        toast.success('Você precisa estar logado!', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+            });
         history("/login")
     }, [token])
 
@@ -58,14 +68,32 @@ function CategoryForm() {
                     'Authorizations': token
                 }
             })
-            alert('Categoria atualizada com sucesso');
+            toast.success('Categoria atualizada com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
         } else{
             post('/categorias', category, setCategory, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Categoria cadastrada com sucesso')
+            toast.success('Categoria cadastrada com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
         }
         back()
     }

@@ -136,6 +136,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { grid } from "@mui/system";
 import './UserForm.css';
 import CancelOutlined from '@mui/icons-material/Cancel';
+import { toast } from "react-toastify";
 
 
 
@@ -193,13 +194,40 @@ function UserForm() {
         if(confirmarSenha === user.password){
             try {
                 await cadastroUsuario(`/api/User/register`, user, setUserResult)
-                alert('Usuario cadastrado com sucesso')
+                toast.success('Usuario cadastrado com sucesso!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                    });
             } catch (error) {
-                alert('Dados já existentes no sistema, altere os campos e tente novamente!')
+                toast.error('Dados já existentes no sistema, altere os campos e tente novamente!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                    });
             }
 
         }else{
-            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+            toast.error('Dados inconsistentes. Favor verificar as informações de cadastro!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
         }
     }
     return (
