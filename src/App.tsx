@@ -16,9 +16,13 @@ import { LocalPostOfficeRounded } from '@mui/icons-material';
 import AboutUs from './pages/aboutUs/AboutUs';
 import ScrollButton from './components/static/ScrollButton/ScrollButton';
 import Profile from './pages/profile/Profile';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   return (
     <>
+      <ToastContainer />
       <Router>
       <Navbar />
 

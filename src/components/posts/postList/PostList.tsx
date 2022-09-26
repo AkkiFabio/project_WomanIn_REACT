@@ -7,6 +7,7 @@ import { search } from '../../../services/Service';
 import Post from '../../../models/PostModel';
 import ModalPost from '../modalPost/ModalPost';
 import CursosImg from '../../../img/Cursos.svg'
+import { toast } from 'react-toastify';
 
 function PostList() {
 
@@ -16,7 +17,16 @@ function PostList() {
 
     useEffect(() => {
         if (token == '') {
-            alert('Você precisa estar logado')
+            toast.error('Você precisa estar logado!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
             history("/login")
         }
     }, [token])

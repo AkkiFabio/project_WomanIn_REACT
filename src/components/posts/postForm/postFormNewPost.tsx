@@ -7,6 +7,7 @@ import PostModel from '../../../models/PostModel';
 import { put, post as servicePost, search, searchId } from '../../../services/Service';
 import './postForm.css';
 import '../../../../src/root.css';
+import { toast } from 'react-toastify';
 
 export interface PostDTO {
     title: string;
@@ -45,12 +46,18 @@ function PostFormNewPost() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
             navigate("/login")
         }
-        console.log(id)
-        console.log(idUser)
-        console.log(post)
     }, [token])
 
     useEffect(() => {
@@ -101,14 +108,32 @@ function PostFormNewPost() {
                     'Authorization': token
                 }
             })
-            alert('Postagem atualizada com sucesso');
+            toast.success('Postagem atualizada com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
         } else {
             servicePost(`/api/Post`, post, setPost, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Postagem cadastrada com sucesso');
+            toast.success('Postagem cadastrada com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
         }
         back()
 
@@ -116,7 +141,7 @@ function PostFormNewPost() {
 
     function back() {
         navigate('/postagens')
-        window.location.reload();        
+        setTimeout(() => {window.location.reload();}, 3000)
     }
     
     return (
