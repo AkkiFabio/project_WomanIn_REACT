@@ -4,11 +4,13 @@ import { AppBar, Box, Button, Toolbar, Typography, /*Button, IconButton*/ } from
 import { Link, useNavigate } from "react-router-dom";
 import './Navbar.css';
 import '../../../root.css';
-import Logo from '../../../img/logo.svg'
+import LogoPurple from '../../../img/WomanInLogoTranspPurple.png'
+import LogoWhite from '../../../img/WomanInLogoTranspWhite.png'
 import HomeIcon from '@mui/icons-material/Home';
 import { post } from '../../../services/Service';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import useLocalStorage from 'react-use-localstorage';
+
 
 function Navbar() {
     let navigate = useNavigate();
@@ -46,7 +48,8 @@ function Navbar() {
                         <Toolbar>
                             <Box sx={{ flexGrow: 1 }}>
                                 <Typography variant="h6" component="div" className={navbar ? 'womanin__active' : 'womanin'} >
-                                    <i>W/</i>                                   
+                                    <i>W/</i>
+                                    {/* <img src={LogoPurple} alt='Logo Womanin'></img> */}
                                 </Typography>
                             </Box>
                             <Box display='flex' sx={{ flexGrow: 1 }}>
@@ -106,6 +109,7 @@ function Navbar() {
                             <Box sx={{ flexGrow: 1 }}>
                                 <Typography variant="h6" component="div" className={navbar ? 'womanin__active' : 'womanin'}>
                                     <i>W/</i>
+                                    {/* <img src={LogoWhite} alt='Logo Womanin'></img> */}
                                 </Typography>
                             </Box>
                             <Box display='flex' sx={{ flexGrow: 1 }}>

@@ -19,7 +19,7 @@ export interface PostDTO {
     }
 }
 
-function PostForm() {
+function PostFormNewPost() {
 
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
@@ -120,7 +120,7 @@ function PostForm() {
     }
     
     return (
-        <Container maxWidth='sm' className='topo'>
+        <Container maxWidth='sm' className=''>
             <form onSubmit={onSubmit}>
                 <Typography variant='h3' className='titulopostform' component='h1' align='center'>
                     Preencha sua postagem!
@@ -163,4 +163,4 @@ function PostForm() {
     )
 }
 
-export default PostForm;
+export default PostFormNewPost;

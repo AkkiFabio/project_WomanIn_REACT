@@ -47,7 +47,7 @@ export default function Profile() {
                 email: userJson?.email,
                 password: userJson?.password,
                 type: userJson?.type
-            })
+            })                          
         }
     }, [userJson])
 
@@ -124,9 +124,13 @@ export default function Profile() {
                                                 <CardActions>
                                                     <Box display='flex' justifyContent='center' mb={1.5}>
                                                         
-                                                            <Box mx={1}>                                                                                
-                                                            <ModalPostUpdate/>
+                                                    <Link to={`/cadastroPost/${post.id}`} className='text-decorator-none'>
+                                                            <Box mx={1}>
+                                                                <Button variant='contained' className='btn__PostUpdate' size='small'>
+                                                                    Atualizar
+                                                                </Button>
                                                             </Box>
+                                                        </Link>
                                                         
 
                                                         <Link to={`/deletarPost/${post.id}`} className='text-decorator-none'>

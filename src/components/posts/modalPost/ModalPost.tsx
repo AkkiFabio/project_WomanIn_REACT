@@ -3,7 +3,7 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import { Button } from "@mui/material"
 import CloseIcon from '@material-ui/icons/Close';
 import './ModalPost.css';
-import PostForm from '../postForm/postForm';
+import PostFormNew from '../postForm/postFormNewPost';
 import { Box, Modal } from '@mui/material';
 
 
@@ -52,7 +52,7 @@ function ModalPost() {
 
             </Box>
 
-            <PostForm />
+            <PostFormNew />
 
         </div>
     );

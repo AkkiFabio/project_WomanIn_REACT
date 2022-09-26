@@ -8,6 +8,9 @@ import { Box, Modal } from '@mui/material';
 
 
 function getModalStyle() {
+
+
+    
     const top = 50;
     const left = 50;
 

@@ -79,3 +79,23 @@
     border: 1px solid var(--hover) !important;
     border-color: black !important;
 }
+
+
+.btn__PostUpdate{
+    border-color: var(--primary-color) !important;
+    background-color: white !important;
+    font-size: 16px !important;
+    color: var(--primary-color) !important;
+    font-weight: bold !important;
+
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 20px !important;
+
+    padding-inline: 50px !important;
+}
+
+.btn__PostUpdate:hover{
+    background-color: var(--hover) !important;
+    color: #fafafa !important;
+    border: 1px solid var(--hover) !important;
+}

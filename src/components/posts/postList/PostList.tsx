@@ -67,7 +67,7 @@ function PostList() {
 
                         )
                         :
-                        <h1>NAO TEM NADA!!!!!!</h1>
+                        <h1>Carregando lista de postagens...</h1>
                 }
             </main>
         </>
