@@ -1,15 +1,15 @@
-.carddeletepost{
-    border-color: #ff5475;
-    margin-top: 100px;
+.topodelete{
+    margin-top: 200px !important;
 }
-.carddeletepost {
+
+.carddeletepost {    
     margin-top: 100px !important;
-    border: 1px solid rgb(196, 196, 196);
+    border: 10px solid var(--primary-color) !important;
     width: 400px;
     height: 200px;
     margin: 5px;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 20px !important;
 
     display: flex;
     flex-direction: column;

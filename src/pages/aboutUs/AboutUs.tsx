@@ -68,7 +68,7 @@ function AboutUs() {
                     <Box display='flex' justifyContent='center'>
                         <Link to='/postagens' className='no__text__decorator'>
                             <Box marginRight={1}>
-                                <Button variant='outlined' className='botao'> Junte-se a nós! </Button>
+                                <Button variant='outlined' className='btn__juntese'> Junte-se a nós! </Button>
                             </Box>
                         </Link>
                     </Box>

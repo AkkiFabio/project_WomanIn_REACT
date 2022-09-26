@@ -6,6 +6,7 @@ import useLocalStorage from 'react-use-localstorage';
 import PostModel from '../../../models/PostModel';
 import { searchId, deleteId } from '../../../services/Service';
 import { toast } from 'react-toastify';
+import { Container } from '@mui/system';
 
 function DeletePost() {
 
@@ -69,7 +70,8 @@ function DeletePost() {
 
     return (
         <>
-            <Box m={2} >
+        <Container maxWidth='sm' className='topodelete'>
+            <Box m={2}>
                 <Card variant='outlined' className='carddeletepost'>
                     <CardContent>
                         <Box justifyContent='center'>
@@ -101,6 +103,7 @@ function DeletePost() {
 
                 </Card>
             </Box>
+            </Container>
         </>
     )
 }
